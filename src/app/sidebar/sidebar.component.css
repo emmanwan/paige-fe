@@ -1,0 +1,165 @@
+/* SIDEBAR */
+.sidebar {
+  width: 280px;
+  background: #ffffff;
+  border-right: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  height: 100%;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #1a73e8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 4px;
+  gap: 8px;
+}
+
+.nav-item:hover {
+  background: #f1f3f4;
+}
+
+.nav-item.active {
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+
+.history {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #666;
+}
+
+.history-title {
+  margin-bottom: 8px;
+}
+
+.history-item {
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.history-item:hover {
+  background: #f1f3f4;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .bubble {
+    max-width: 75%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .app-shell {
+    flex-direction: column;
+  }
+
+  /* Sidebar becomes top floating bar */
+  .sidebar {
+    min-width: calc(100% - 3rem);
+    height: 3rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+
+    border-radius: 16px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    z-index: 1000;
+    padding: 10px 14px;
+  }
+
+  /* Hide heavy sections on mobile */
+  .nav-section,
+  .history,
+  .new-chat {
+    display: none;
+  }
+
+  /* Brand alignment */
+  .brand {
+    padding: 0;
+  }
+
+  /* Hamburger button */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 22px;
+    height: 2px;
+    background: #333;
+    border-radius: 2px;
+  }
+
+  /* Logo moves to right side feel */
+  .logo {
+    margin-left: auto;
+  }
+
+  /* Chat spacing so it doesn't hide under fixed bar */
+  .main {
+    padding-top: 80px;
+  }
+
+  .chat {
+    padding: 12px;
+  }
+
+  .bubble {
+    max-width: 85%;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .sidebar {
+    min-width: calc(100% - 3rem);
+    height: 3rem;
+    border-radius: 14px;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,24 @@
+<aside class="sidebar">
+  <div class="brand">
+    <div class="logo">G</div>
+    <div class="brand-text">PAIGE</div>
+  </div>
+  <div class="nav-section">
+    @for (folder of folders; track folder) {
+      <div class="nav-item"
+        (click)="changeTab(folder.tab)"
+        [class.active]="active === folder.tab">
+          <span class="material-icons">{{ folder.icon }}</span>
+        {{ folder.name }}
+      </div>
+    }
+  </div>
+  <div class="history">
+    <div class="history-title">(PAIGE) - Developed by Emman Dagdagan</div>
+  </div>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</aside>

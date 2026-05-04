@@ -1,0 +1,43 @@
+<div class="tiles-grid">
+  <div class="tile" (click)="openDoc('Employment Guidelines')">
+    <span class="material-icons">description</span>
+    <p>Employment Guidelines</p>
+  </div>
+
+  <div class="tile" (click)="openDoc('How to File a Concern')">
+    <span class="material-icons">report_problem</span>
+    <p>How to File a Concern</p>
+  </div>
+
+  <div class="tile" (click)="openDoc('Policies About Hiring')">
+    <span class="material-icons">policy</span>
+    <p>Policies About Hiring</p>
+  </div>
+
+  <div class="tile" (click)="openDoc('Capabilities Upon Employment')">
+    <span class="material-icons">work</span>
+    <p>Capabilities Upon Employment</p>
+  </div>
+
+  <div class="tile" (click)="openDoc('How to Raise a Ticket')">
+    <span class="material-icons">support_agent</span>
+    <p>How to Raise a Ticket</p>
+  </div>
+</div>
+
+<!-- Popup for documents -->
+<div *ngIf="popupDoc" class="popup-overlay">
+  <div class="popup-content">
+    <iframe 
+        *ngIf="safeUrl"
+        [src]="safeUrl"
+        width="100%" 
+        height="500" 
+        frameborder="0">
+    </iframe>
+    <div class="popup-actions">
+        <button class="action" (click)="closePopup()">Close</button>
+        <button class="action primary ask-action" (click)="goToChat(popupDoc)">Ask PAIGE</button>
+    </div>
+  </div>
+</div>

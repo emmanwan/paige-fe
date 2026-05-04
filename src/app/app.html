@@ -1,0 +1,24 @@
+<div class="app-shell">
+  <!-- SIDEBAR -->
+  <app-sidebar (tabChange)="setActiveTab($event)"></app-sidebar>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+    <div class="header">
+      <h2>{{ activeTab.toUpperCase() }}</h2>
+
+      <button class="bug-btn" (click)="contactDev()">
+        🐞 Report Issue
+      </button>
+    </div>
+    @if (activeTab==='home') {
+      <app-home (openChat)="handleOpenChat($event)"></app-home>
+    }
+    @else if (activeTab==='assistant') {
+      <app-chat [defaultPrompt]="chatPrompt"></app-chat>
+    }
+    @else if (activeTab==='about') {
+      <app-about></app-about>
+    }
+  </div>
+</div>
